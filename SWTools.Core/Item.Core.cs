@@ -25,7 +25,7 @@ namespace SWTools.Core {
                     UrlPreview = response.preview_url ?? "";
                 }
                 catch (Exception ex) {
-                    LogManager.Log.Error("Exception occured when parsing {ItemId} with SwDownloader:\n{Exception}", ItemId, ex);
+                    LogManager.Log.Error("Exception occurred when parsing {ItemId} with SwDownloader:\n{Exception}", ItemId, ex);
                 }
                 finally {
                     // 设置状态
@@ -61,7 +61,7 @@ namespace SWTools.Core {
                     UrlPreview = fileDetails.preview_url ?? "";
                 }
                 catch (Exception ex) {
-                    LogManager.Log.Error("Exception occured when parsing {ItemId} with GetPublishedFileDetails:\n{Exception}", ItemId, ex);
+                    LogManager.Log.Error("Exception occurred when parsing {ItemId} with GetPublishedFileDetails:\n{Exception}", ItemId, ex);
                 }
                 finally {
                     // 设置状态
@@ -176,7 +176,7 @@ namespace SWTools.Core {
                     ItemId, GetDownloadPath());
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when downloading {ItemId}:\n{Exception}", ItemId, ex);
+                LogManager.Log.Error("Exception occurred when downloading {ItemId}:\n{Exception}", ItemId, ex);
                 DownloadState = EDownloadState.Failed;
                 FailReason = EFailReason.Exception;
                 _exceptionMsg = ex.Message;

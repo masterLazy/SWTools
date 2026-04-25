@@ -32,7 +32,7 @@ namespace SWTools.Core.API {
                 return root.response;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when deserializing Json:\n{Exception}", ex);
+                LogManager.Log.Error("Exception occurred when deserializing Json:\n{Exception}", ex);
             }
             return null;
         }

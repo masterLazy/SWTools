@@ -56,7 +56,7 @@ namespace SWTools.Core {
                 return JsonSerializer.Serialize(this, Constants.JsonOptions);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when serializing Json:\n{Exception}", ex);
+                LogManager.Log.Error("Exception occurred when serializing Json:\n{Exception}", ex);
                 return string.Empty;
             }
         }
@@ -70,7 +70,7 @@ namespace SWTools.Core {
                 return true;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when saving {FileName}:\n{Exception}",
+                LogManager.Log.Error("Exception occurred when saving {FileName}:\n{Exception}",
                     fileName, ex);
                 return false;
             }
@@ -90,7 +90,7 @@ namespace SWTools.Core {
                 return list;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when loading from {FileName}:\n{Exception}",
+                LogManager.Log.Error("Exception occurred when loading from {FileName}:\n{Exception}",
                     fileName, ex);
                 return null;
             }

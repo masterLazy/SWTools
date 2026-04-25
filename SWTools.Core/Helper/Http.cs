@@ -24,7 +24,7 @@
                 return await response.Content.ReadAsStringAsync();
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when requesting \"{Url}\" (GET):\n{Exception}",
+                LogManager.Log.Error("Exception occurred when requesting \"{Url}\" (GET):\n{Exception}",
                     url, ex);
                 return null;
             }
@@ -51,7 +51,7 @@
                 return await response.Content.ReadAsStringAsync();
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when requesting \"{Url}\" (POST):\n{Exception}",
+                LogManager.Log.Error("Exception occurred when requesting \"{Url}\" (POST):\n{Exception}",
                     url, ex);
                 return null;
             }
@@ -73,7 +73,7 @@
                 return true;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when downloading \"{Url}\":\n{Exception}",
+                LogManager.Log.Error("Exception occurred when downloading \"{Url}\":\n{Exception}",
                     url, ex);
                 return false;
             }
@@ -110,7 +110,7 @@
                 return filePath;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when downloading \"{Url}\":\n{Exception}",
+                LogManager.Log.Error("Exception occurred when downloading \"{Url}\":\n{Exception}",
                     url, ex);
                 return null;
             }

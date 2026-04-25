@@ -70,7 +70,7 @@ namespace SWTools.Core {
                 return JsonSerializer.Serialize(this, Constants.JsonOptions);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when serializing Json:\n{Exception}", ex);
+                LogManager.Log.Error("Exception occurred when serializing Json:\n{Exception}", ex);
                 return string.Empty;
             }
         }

@@ -33,7 +33,7 @@ namespace SWTools.Core {
                 return true;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when saving {FileName}:\n{Exception}",
+                LogManager.Log.Error("Exception occurred when saving {FileName}:\n{Exception}",
                     Constants.ConfigFile, ex);
                 return false;
             }
@@ -58,7 +58,7 @@ namespace SWTools.Core {
                 LogManager.Log?.Information("Loaded config from {Filaname}", Constants.ConfigFile);
             }
             catch (Exception ex) {
-                LogManager.Log?.Error("Exception occured when loading {Filename}:\n{Exception}",
+                LogManager.Log?.Error("Exception occurred when loading {Filename}:\n{Exception}",
                     Constants.ConfigFile, ex);
             }
         }

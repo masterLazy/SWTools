@@ -13,18 +13,18 @@ namespace SWTools.WPF {
 
             // 添加异常兜底程序
             AppDomain.CurrentDomain.UnhandledException += (sender, args) => {
-                LogManager.Log.Fatal("Unhandled exception occured:\n{Exception}", (Exception)args.ExceptionObject);
+                LogManager.Log.Fatal("Unhandled exception occurred:\n{Exception}", (Exception)args.ExceptionObject);
                 ShowExceptionMsgBox((Exception)args.ExceptionObject, "未捕获的异常");
                 LogManager.NoOverride = true;
             };
             DispatcherUnhandledException += (sender, args) => {
-                LogManager.Log.Fatal("Unhandled exception occured in UI thread:\n{Exception}", args.Exception);
+                LogManager.Log.Fatal("Unhandled exception occurred in UI thread:\n{Exception}", args.Exception);
                 LogManager.NoOverride = true;
                 ShowExceptionMsgBox(args.Exception, "未捕获的 UI 线程异常");
                 // args.Handled = true;
             };
             TaskScheduler.UnobservedTaskException += (sender, args) => {
-                LogManager.Log.Fatal("Unobserved task exception occured:\n{Exception}", args.Exception);
+                LogManager.Log.Fatal("Unobserved task exception occurred:\n{Exception}", args.Exception);
                 LogManager.NoOverride = true;
                 ShowExceptionMsgBox(args.Exception, "未观测的任务异常");
                 // args.SetObserved();

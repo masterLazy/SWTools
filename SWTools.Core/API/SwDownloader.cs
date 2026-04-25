@@ -30,7 +30,7 @@ namespace SWTools.Core.API {
                 return JsonSerializer.Deserialize<Response[]>(response, Constants.JsonOptions);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when deserializing Json:\n{Exception}", ex);
+                LogManager.Log.Error("Exception occurred when deserializing Json:\n{Exception}", ex);
             }
             return null;
         }

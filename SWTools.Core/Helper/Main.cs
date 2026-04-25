@@ -34,7 +34,7 @@ namespace SWTools.Core.Helper {
                 LogManager.Log.Information("Deleted {CacheDir}", Constants.PreviewDir);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when deleting {CacheDir}:\n{Exception}", Constants.CacheDir, ex);
+                LogManager.Log.Error("Exception occurred when deleting {CacheDir}:\n{Exception}", Constants.CacheDir, ex);
             }
         }
 
@@ -63,7 +63,7 @@ namespace SWTools.Core.Helper {
                 return JsonSerializer.Deserialize<API.LatestInfo.Response>(jsonString, Constants.JsonOptions);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when loading from {FileName}:\n{Exception}", Constants.LatestInfoFile, ex);
+                LogManager.Log.Error("Exception occurred when loading from {FileName}:\n{Exception}", Constants.LatestInfoFile, ex);
                 return null;
             }
         }
@@ -84,7 +84,7 @@ namespace SWTools.Core.Helper {
                 }
             }
             catch (UnauthorizedAccessException ex) {
-                LogManager.Log.Error("UnauthorizedAccessException occured when calculating size of directory {Directory}:\n{Exception}",
+                LogManager.Log.Error("UnauthorizedAccessException occurred when calculating size of directory {Directory}:\n{Exception}",
                     path, ex);
             }
             return totalSize;

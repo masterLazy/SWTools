@@ -17,7 +17,7 @@ namespace SWTools.Core.API {
                 return JsonSerializer.Deserialize<Response>(response, Constants.JsonOptions);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when deserializing Json:\n{Exception}", ex);
+                LogManager.Log.Error("Exception occurred when deserializing Json:\n{Exception}", ex);
             }
             return null;
         }
@@ -34,7 +34,7 @@ namespace SWTools.Core.API {
                 return true;
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when saving {FileName}:\n{Exception}",
+                LogManager.Log.Error("Exception occurred when saving {FileName}:\n{Exception}",
                     filename, ex);
                 return false;
             }
@@ -54,7 +54,7 @@ namespace SWTools.Core.API {
                     return JsonSerializer.Serialize(this, Constants.JsonOptions);
                 }
                 catch (Exception ex) {
-                    LogManager.Log.Error("Exception occured when serializing Json:\n{Exception}", ex);
+                    LogManager.Log.Error("Exception occurred when serializing Json:\n{Exception}", ex);
                     return string.Empty;
                 }
             }

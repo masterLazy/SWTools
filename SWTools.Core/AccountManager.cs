@@ -38,7 +38,7 @@ namespace SWTools.Core {
                     Constants.PubAccountsFile, pub.Version);
             }
             catch (Exception ex) {
-                LogManager.Log.Error("Exception occured when loading {Filename}:\n{Exception}",
+                LogManager.Log.Error("Exception occurred when loading {Filename}:\n{Exception}",
                     Constants.PubAccountsFile, ex);
             }
         }
