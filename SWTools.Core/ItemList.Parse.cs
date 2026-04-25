@@ -30,9 +30,9 @@ namespace SWTools.Core {
         // 联网解析
         private async Task ParseWithRequest() {
             if (await ParseWithGetPublishedFileDetails()) return;
-            if (! await ParseWithSwDownloader()) {
-                _ = ConvertParseState(Item.EParseState.Pending, Item.EParseState.Failed);
-            }
+            // 重试
+            ConvertParseState(Item.EParseState.Failed, Item.EParseState.Pending);
+            await ParseWithSwDownloader();
         }
 
         private async Task<bool> ParseWithSwDownloader() {
@@ -50,8 +50,8 @@ namespace SWTools.Core {
                     this[FindIndex(response.publishedfileid!)].ParseFrom(response);
                 }
             }
-            items = ConvertParseState(Item.EParseState.Handling, Item.EParseState.Pending);
-            return items.Count == 0;
+            _ = ConvertParseState(Item.EParseState.Handling, Item.EParseState.Failed);
+            return IsAllParsed();
         }
 
         private async Task<bool> ParseWithGetPublishedFileDetails() {
@@ -70,8 +70,8 @@ namespace SWTools.Core {
                     this[FindIndex(detail.publishedfileid!)].ParseFrom(detail);
                 }
             }
-            items = ConvertParseState(Item.EParseState.Handling, Item.EParseState.Pending);
-            return items.Count == 0;
+            _ = ConvertParseState(Item.EParseState.Handling, Item.EParseState.Failed);
+            return IsAllParsed();
         }
 
         // 转换解析状态
@@ -84,6 +84,14 @@ namespace SWTools.Core {
                 }
             }
             return items;
+        }
+
+        // 是否全部解析成功
+        private bool IsAllParsed() {
+            foreach (var item in this) {
+                if (item.ParseState != Item.EParseState.Done) return false;
+            }
+            return true;
         }
     }
 }
